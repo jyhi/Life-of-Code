@@ -1,0 +1,145 @@
+/* myhome.css: Global style definition for myhome.html
+ * Copyleft 2017 Minyong LI <l630003027@mail.uic.edu.hk>.
+ */
+
+/*** Global Settings ***/
+
+body {
+  text-align: center; /* Teachers said to do so. */
+  margin: 0px;
+}
+
+/*** Divisions ***/
+
+/* The navigation bar
+ * Fixed on the top of window, so that it can be seen everywhere.
+ */
+#divNavbar {
+  z-index: 10;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: #98bad0;
+}
+
+/* The container containing the whole webpage.
+ * maximize usable space.
+ */
+#divContainer {
+  width: 100%;
+}
+
+/* Head section, including self introduction, etc.
+ * Set to transparent for better look.
+ */
+#divHead {
+  background: rgba(0, 0, 0, 0.0);
+  padding: 100px 0 60px;
+}
+
+#divWorkshop {
+  background-color: #52edc7;
+}
+
+#divPreference {
+  background-color: #ffdb4c;
+}
+
+#divTimetable {
+  background-color: #ff5e3a;
+}
+
+#divExternLinks {
+  background-color: #f6c79a;
+}
+
+#divFooter {
+  background-color: rgba(0, 0, 0, 0.0);
+  padding: 100px 0 100px;
+}
+
+/* Background image
+ * In fixed position too, contents "flow" upon.
+ */
+#divBgImg {
+  z-index: -1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-image: linear-gradient(rgb(75, 198, 227), rgb(14, 60, 96));
+}
+
+div.divContent {
+  padding: 30px 0 30px 0;
+}
+
+/*** Text elements (Header, Paragraph, ...) ***/
+
+/* Main title on the top of the webpage.
+ */
+#hMainTitle {
+  font-size: 48px;
+  color: white;
+  text-shadow: 0px 0px 30px #000; /* Yay! */
+}
+
+#hSubTitle {
+  color: white;
+}
+
+#pIntro {
+  /* TODO:  */
+}
+
+.contentMainTitle {
+  font-size: 36px;
+}
+
+/*.contentMainTitle::after {
+  content: ;
+}*/
+
+.contentSubTitle {
+  /* TODO:  */
+}
+
+/* Style for main text, e.g. lorem ipsum dolor sit amet, ...
+ */
+.contentText {
+  width: 60%;
+  margin: 0 20%;
+}
+
+/*** Misc. elements (Images, Buttons, Links, ...) ***/
+
+button.navbar {
+  height: inherit;
+  width: 10%;
+  border: 0px;
+  padding: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+
+a.navbar {
+  height: inherit;
+  margin: 0 5%;
+}
+
+button.card {
+  width: 250px;
+  padding: 0px;
+  border: 0px;
+  margin: 20px;
+  height: 150px;
+  font-size: 24px; /* Default value */
+  background-color: #8edbfc;
+}
+
+img.circled {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+}
