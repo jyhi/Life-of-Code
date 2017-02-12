@@ -9,6 +9,10 @@ body {
   margin: 0px;
 }
 
+
+
+
+
 /*** Divisions ***/
 
 /* The navigation bar
@@ -39,25 +43,43 @@ body {
   padding: 100px 0 60px;
 }
 
+/* Workshop section, workshop expectations.
+ * Set to another color.
+ */
 #divWorkshop {
   background-color: #52edc7;
 }
 
+/* Preference section, what kind of role would you play?
+ * Set to yet another color.
+ */
 #divPreference {
   background-color: #ffdb4c;
 }
 
+/* Timetable section, my timetable.
+ * Set to another *gay* color.
+ */
 #divTimetable {
   background-color: #ff5e3a;
 }
 
+/* Favourite site section.
+ * Set to another color.
+ */
 #divExternLinks {
   background-color: #f6c79a;
 }
 
+/* Footer section. */
 #divFooter {
   background-color: rgba(0, 0, 0, 0.0);
   padding: 100px 0 100px;
+  /* NOTE: On AOSC OS (Linux) with Firefox 51.0.1, the default font color
+   *   is GREY, and texts in footer become unclear. Force it to be white
+   *   like the main title and sub-title.
+   */
+  color: white;
 }
 
 /* Background image
@@ -73,11 +95,21 @@ body {
   background-image: linear-gradient(rgb(75, 198, 227), rgb(14, 60, 96));
 }
 
+/* Content "cards". */
 div.divContent {
   padding: 30px 0 30px 0;
 }
 
+
+
+
+
 /*** Text elements (Header, Paragraph, ...) ***/
+
+/* Set link default color to default for better appearence. */
+a:link {
+  color: inherit;
+}
 
 /* Main title on the top of the webpage.
  */
@@ -87,35 +119,44 @@ div.divContent {
   text-shadow: 0px 0px 30px #000; /* Yay! */
 }
 
+/* Subtitle on the top of the webpage.
+ */
 #hSubTitle {
   color: white;
 }
 
-#pIntro {
-  /* TODO:  */
-}
-
+/* Main titles in the content (not in the head section) */
 .contentMainTitle {
   font-size: 36px;
 }
 
-/*.contentMainTitle::after {
-  content: ;
-}*/
-
-.contentSubTitle {
-  /* TODO:  */
-}
-
-/* Style for main text, e.g. lorem ipsum dolor sit amet, ...
- */
+/* Style for main text, e.g. lorem ipsum dolor sit amet, ... */
 .contentText {
-  width: 60%;
-  margin: 0 20%;
+  width: 70%;
+  margin: 0 15%;
 }
+
+
+
+
 
 /*** Misc. elements (Images, Buttons, Links, ...) ***/
 
+/* Deal with table cells */
+th, td {
+  /* Reset. */
+  margin: 0px;
+  border: 0px;
+  padding: 2px;
+}
+
+/* Aesthetic table look (still ugly enough) */
+table.table {
+  border: 1px solid #fdb32b;
+  height: 400px;
+}
+
+/* Buttons on the navigation bar */
 button.navbar {
   height: inherit;
   width: 10%;
@@ -124,14 +165,18 @@ button.navbar {
   background: rgba(0, 0, 0, 0);
 }
 
+/* Links on the navigation bar
+ * Divided from button.navbar
+ */
 a.navbar {
   height: inherit;
   margin: 0 5%;
 }
 
+/* Card-look buttons. */
 button.card {
   width: 250px;
-  padding: 0px;
+  padding: 2px;
   border: 0px;
   margin: 20px;
   height: 150px;
@@ -139,6 +184,15 @@ button.card {
   background-color: #8edbfc;
 }
 
+/* Card-look buttons, use in corporate with button.card */
+button.card-sm {
+  width: 150px;
+  height: 90px;
+  margin: 10px;
+  font-size: 16px; /* Default value */
+}
+
+/* Circle images */
 img.circled {
   border-radius: 50%;
   width: 150px;
