@@ -1,0 +1,71 @@
+/* Reset. */
+body {
+    padding: 0px;
+    border:  0px;
+    margin:  0px;
+    background-color: purple;
+}
+
+#divContainer {
+    margin: 50px auto 50px auto;
+    width: 70%;
+}
+
+#divTitle {
+    font-size: 8px;
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+
+#divTitle h1 {
+    margin: 0px;
+}
+
+#divFormMain {
+    padding: 1em;
+    background-color: white;
+}
+
+#divUsrname, #divPos {
+    display: inline;
+}
+
+#divMdLeft {
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+#divMdRight {
+    float: left;
+    width: 60%;
+
+}
+
+#divRecentJobs, #divWorkExp {
+    float: left;
+    width: 40%;
+}
+
+#divUpload, #divBtnGroup {
+    text-align: center;
+    clear: both;
+}
+
+div.block {
+    margin: 1em;
+}
+
+span.title-onleft {
+    margin-right: 1em;
+}
+
+span.title-onright {
+    margin-left: 1em;
+}
+
+span.title-ontop {
+    display: block;
+    margin-bottom: 0.5em;
+}

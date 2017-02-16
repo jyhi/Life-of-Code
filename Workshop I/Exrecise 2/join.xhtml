@@ -1,0 +1,116 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <!-- XHTML Strict should be fun. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <!-- NOTE: We are writing XHTML, not HTML. -->
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <title>Join My Company! - Workshop I Exercise 2 by Minyong LI</title>
+    <link rel="stylesheet" href="./css/join.css" type="text/css" media="screen" charset="utf-8" />
+  </head>
+    <body>
+        <div id="divContainer">
+            <!-- Title -->
+            <div id="divTitle">
+                <h1>Please fill in the form below to submit</h1>
+            </div>
+
+            <div id="divFormMain">
+                <form>
+
+                    <!-- Top Block -->
+                    <div>
+                        <!-- User Name -->
+                        <div class="block" id="divUsrname">
+                            <span class="title-onleft">User Name:</span>
+                            <input type="text" name="usrname" />
+                        </div>
+                        <!-- Position -->
+                        <div class="block" id="divPos">
+                            <span class="title-onleft">Position:</span>
+                            <select name="pos">
+                                <option value="officer">Officer</option>
+                                <option value="manager">Manager</option>
+                                <option value="engineer">Engineer</option>
+                                <option value="architect">Architect</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Middle-left Block -->
+                    <div id="divMdLeft">
+                        <!-- Your Current Skills -->
+                        <div class="block" id="divCurrSkills">
+                            <fieldset>
+                                <legend>Your Current Skills</legend>
+                                <div>
+                                    <input type="checkbox" name="webdesign" />
+                                    <span class="title-onright">Web Design</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="jaba" />
+                                    <span class="title-onright">Java</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="database" />
+                                    <span class="title-onright">Database</span>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- Cities Expected -->
+                        <div class="block" id="divCitiesExpect">
+                            <fieldset>
+                                <legend>Cities Expected</legend>
+                                <div>
+                                    <input type="radio" name="beijing" />
+                                    <span class="title-onright">Beijing</span>
+                                </div>
+                                <div>
+                                    <input type="radio" name="shenzhen" />
+                                    <span class="title-onright">Shenzhen</span>
+                                </div>
+                                <div>
+                                    <input type="radio" name="zhuhai" />
+                                    <span class="title-onright">Zhuhai</span>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- Middle-right Block -->
+                    <div id="divMdRight">
+                        <!-- Recent Jobs -->
+                        <div class="block" id="divRecentJobs">
+                            <span class="title-ontop">Recent Jobs</span>
+                            <select multiple="multiple" name="recentjobs" style="width: 100%;">
+                                <option value="assistant">Assistant</option>
+                                <option value="swengineer">Software Engineer</option>
+                                <option value="cstmrsrv">Customer Service</option>
+                                <option value="mngr">Manager</option>
+                                <option value="ceo">CEO</option>
+                            </select>
+                        </div>
+                        <!-- Working Experiences -->
+                        <div class="block" id="divWorkExp">
+                            <span class="title-ontop">Working Experience:</span>
+                            <textarea name="workexp" style="width: 100%;"></textarea>
+                        </div>
+                        <!-- Upload a File -->
+                        <div class="block" id="divUpload">
+                            <span style="title-onleft">Upload a File</span> <!-- FIXME: No margin of 1em on right -->
+                            <input type="file" name="upldfile" />
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div id="divBtnGroup">
+                        <input type="reset" />
+                        <input type="submit" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
