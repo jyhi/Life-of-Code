@@ -24,12 +24,12 @@
                         <!-- User Name -->
                         <div class="block" id="divUsrname">
                             <span class="title-onleft">User Name:</span>
-                            <input type="text" name="usrname" />
+                            <input type="text" name="usrname" id="inputUsrname" />
                         </div>
                         <!-- Position -->
                         <div class="block" id="divPos">
                             <span class="title-onleft">Position:</span>
-                            <select name="pos">
+                            <select name="pos" id="selectPos">
                                 <option value="officer">Officer</option>
                                 <option value="manager">Manager</option>
                                 <option value="engineer">Engineer</option>
@@ -42,7 +42,7 @@
                     <div id="divMdLeft">
                         <!-- Your Current Skills -->
                         <div class="block" id="divCurrSkills">
-                            <fieldset>
+                            <fieldset id="fieldsetCurrSkills">
                                 <legend>Your Current Skills</legend>
                                 <div>
                                     <input type="checkbox" name="webdesign" />
@@ -60,7 +60,7 @@
                         </div>
                         <!-- Cities Expected -->
                         <div class="block" id="divCitiesExpect">
-                            <fieldset>
+                            <fieldset id="fieldsetCitiesExpect">
                                 <legend>Cities Expected</legend>
                                 <div>
                                     <input type="radio" name="beijing" />
@@ -83,7 +83,7 @@
                         <!-- Recent Jobs -->
                         <div class="block" id="divRecentJobs">
                             <span class="title-ontop">Recent Jobs</span>
-                            <select multiple="multiple" name="recentjobs" style="width: 100%;">
+                            <select multiple="multiple" name="recenjobs" id="selectRecentJobs" style="width: 100%;">
                                 <option value="assistant">Assistant</option>
                                 <option value="swengineer">Software Engineer</option>
                                 <option value="cstmrsrv">Customer Service</option>
@@ -94,23 +94,25 @@
                         <!-- Working Experiences -->
                         <div class="block" id="divWorkExp">
                             <span class="title-ontop">Working Experience:</span>
-                            <textarea name="workexp" style="width: 100%;"></textarea>
+                            <textarea name="workexp" id="textareaWorkExp" style="width: 100%;"></textarea>
                         </div>
                         <!-- Upload a File -->
                         <div class="block" id="divUpload">
                             <span style="title-onleft">Upload a File</span> <!-- FIXME: No margin of 1em on right -->
-                            <input type="file" name="upldfile" />
+                            <input type="file" name="upldfile" id="inputUpldFile" />
                         </div>
                     </div>
 
                     <!-- Buttons -->
                     <div id="divBtnGroup">
                         <input type="reset" />
-                        <input type="submit" />
+                        <input type="submit" onclick="alertAllInfo()"/>
                     </div>
                 </form>
             </div>
 
         </div>
     </body>
+
+    <script src="./js/join.js" charset="utf-8"></script>
 </html>
