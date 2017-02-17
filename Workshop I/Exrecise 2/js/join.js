@@ -1,3 +1,6 @@
+/**
+ * Sort all information filled in the form and pop a messagebox up to show.
+ */
 function AlertAllInfo() {
     var usrname      = document.getElementById('inputUsrname');
     var pos          = document.getElementById('selectPos');
@@ -17,6 +20,12 @@ function AlertAllInfo() {
 
 }
 
+/**
+ * Given a HTML <fieldset>, return options inside selected.
+ *
+ * @param  fs [in] The <fieldset>, usually gotten by `document.getElementById`.
+ * @return A comma-seperated string containing values of the options selected.
+ */
 function FieldsetReturnSelected(fs) {
     let strTmp = "";
     for (let i = 0; i < fs.children.length; i++) { // Pretty like Bubble Sort.
@@ -32,6 +41,14 @@ function FieldsetReturnSelected(fs) {
     return strTmp.length ? strTmp + "(over)\n" : "<Not selected yet>\n"; // XXX: This is not elegant.
 }
 
+/**
+ * Given a HTML <select multiple="multiple">, return options inside selected.
+ *
+ * May work on a single-selection list too.
+ *
+ * @param  fs [in] The <select multiple="multiple">, usually gotten by `document.getElementById`.
+ * @return A comma-seperated string containing values of the options selected.
+ */
 function SelectMultipleReturnSelected(sel) {
     let strTmp = "";
     for (let i = 0, aIndex = 0; i < sel.children.length; i++) {
