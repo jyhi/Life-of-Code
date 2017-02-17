@@ -1,4 +1,4 @@
-function alertAllInfo() {
+function AlertAllInfo() {
     var usrname      = document.getElementById('inputUsrname');
     var pos          = document.getElementById('selectPos');
     var currskills   = document.getElementById('fieldsetCurrSkills');
