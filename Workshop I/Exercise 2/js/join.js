@@ -27,18 +27,18 @@ function AlertAllInfo() {
  * @return A comma-seperated string containing values of the options selected.
  */
 function FieldsetReturnSelected(fs) {
-    let strTmp = "";
+    let aTmp = [];
     for (let i = 0; i < fs.children.length; i++) { // Pretty like Bubble Sort.
         if (fs.children[i].tagName == "div") {
             for (let j = 0; j < fs.children[i].children.length; j++) {
                 if ((fs.children[i].children[j].tagName == "input") && (fs.children[i].children[j].checked == true)) {
-                    strTmp += fs.children[i].children[j].value + ", ";
+                    aTmp.push (fs.children[i].children[j].value);
                 } else {}
             }
         } else {}
     }
 
-    return strTmp.length ? strTmp + "(over)\n" : "<Not selected yet>\n"; // XXX: This is not elegant.
+    return aTmp.length ? aTmp + "\n" : "<Not selected yet>\n";
 }
 
 /**
@@ -50,12 +50,12 @@ function FieldsetReturnSelected(fs) {
  * @return A comma-seperated string containing values of the options selected.
  */
 function SelectMultipleReturnSelected(sel) {
-    let strTmp = "";
+    let aTmp = [];
     for (let i = 0, aIndex = 0; i < sel.children.length; i++) {
         if ((sel.children[i].tagName == "option") && (sel.children[i].selected)) {
             strTmp += sel.children[i].value + ", ";
         } else {}
     }
 
-    return strTmp.length ? strTmp + "(over)\n" : "<Not selected yet>\n"; // XXX: This is not elegant.
+    return aTmp.length ? aTmp + "\n" : "<Not selected yet>\n";
 }
