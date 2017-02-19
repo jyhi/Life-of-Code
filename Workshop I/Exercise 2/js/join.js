@@ -53,7 +53,7 @@ function SelectMultipleReturnSelected(sel) {
     let aTmp = [];
     for (let i = 0, aIndex = 0; i < sel.children.length; i++) {
         if ((sel.children[i].tagName == "option") && (sel.children[i].selected)) {
-            strTmp += sel.children[i].value + ", ";
+            aTmp.push (sel.children[i].value);
         } else {}
     }
 
