@@ -1,0 +1,71 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <!-- XHTML Strict should be fun. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <!-- NOTE: We are writing XHTML, not HTML. -->
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <title>Calculator - Workshop I Exercise 3 by Minyong LI</title>
+    <link rel="stylesheet" href="./css/calc.css" type="text/css" media="screen" charset="utf-8" />
+  </head>
+    <body>
+      <div class="container">
+        <h1 style="margin-bottom: 0;">The <em>Real</em> Calculator</h1>
+        <h2 style="margin-top: 0;">Please input your formula <em>directly</em>.</h2>
+
+        <div class="display-formula">
+          <span>Formula</span>
+          <!-- Nothing here initially. -->
+        </div>
+        <div class="display-result">
+          <span>Result</span>
+          <!-- Nothing here initially. -->
+        </div>
+        <div class="keypad">
+          <!-- Layout:
+               RPN  B C
+              7 8 9 - /
+              4 5 6 + *
+              1 2 3 ( )
+               0  .  =
+            -->
+          <table class="keypad">
+            <tr>
+              <td colspan="3"><button class="key key-set">Show RPN*</button></td>
+              <td><button class="key key-set">&#8592;</button></td>
+              <td><button class="key key-set">C</button></td>
+            </tr>
+            <tr>
+              <td><button class="key">7</button></td>
+              <td><button class="key">8</button></td>
+              <td><button class="key">9</button></td>
+              <td><button class="key">-</button></td>
+              <td><button class="key">/</button></td>
+            </tr>
+            <tr>
+              <td><button class="key">4</button></td>
+              <td><button class="key">5</button></td>
+              <td><button class="key">6</button></td>
+              <td><button class="key">+</button></td>
+              <td><button class="key">*</button></td>
+            </tr>
+            <tr>
+              <td><button class="key">1</button></td>
+              <td><button class="key">2</button></td>
+              <td><button class="key">3</button></td>
+              <td><button class="key">(</button></td>
+              <td><button class="key">)</button></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button class="key">0</button></td>
+              <td><button class="key">.</button></td>
+              <td colspan="2"><button class="key">=</button></td>
+            </tr>
+          </table>
+        </div>
+        <p>* RPN = Reverse Polish Notation</p>
+      </div>
+
+    </body>
+</html>

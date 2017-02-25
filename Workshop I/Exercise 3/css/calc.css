@@ -1,0 +1,57 @@
+/* TODO: FIXME: XXX: "20% Comments" as required. */
+
+/* リセット。 */
+body, td, tr {
+  padding: 0;
+  border:  0;
+  margin:  0;
+}
+
+/* div.container: Container. */
+div.container {
+  padding: 0;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+/* div.display-formula: WHere formula is displayed. */
+div.display-formula {
+  border-bottom: 1px solid;
+  text-align: right;
+}
+
+/* div.display-result: Where result is displayed. Should be bigger than
+ * div.display-formula.
+ */
+div.display-result {
+  /*height: 4em;*/
+  text-align: right;
+  font-size: 2em;
+}
+
+/* div.keypad: Where the keyboard sits. */
+div.keypad {
+  /* Seems that there is nothing to do here. */
+}
+
+/* table.keypad: The keypad layout. */
+table.keypad {
+  width: 100%; /* Don't shrink, dude. */
+}
+
+/* button.key: Key on keypad, certainly. */
+button.key {
+  margin:  0;
+  border:  0;
+  padding: 0;
+  width: 100%;
+  height: 3em;
+  font-size: 1.5em;
+  background-color: #59c7f7;
+}
+
+/* Let it be differnet when the cursor is over the key. */
+button.key:hover {
+  background-color: #1ad0fd;
+}
