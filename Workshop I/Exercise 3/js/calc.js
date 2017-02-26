@@ -50,7 +50,7 @@ function DisplayBackspace() {
  * Change the calculating method of the calculator.
  *
  * This function works with the switch key on the upper-left corner. It changes its
- * background color to red when "eval()" is selected.
+ * background color to red when "eval()" is selected, and changes the subtitle.
  */
 function SwitchAlgorithm() {
   var status = document.getElementById('AlgoSwitchBtn').innerHTML;
@@ -59,11 +59,15 @@ function SwitchAlgorithm() {
     // NOTE: Using `eval()` is a trick, and is *dangerous*. Not recommended.
     //   Change the color to red to imply this.
     document.getElementById('AlgoSwitchBtn').innerHTML = "eval()";
-    document.getElementById('AlgoSwitchBtn').style = "background-color: #ff5e3a;"
+    document.getElementById('AlgoSwitchBtn').style = "background-color: #ff5e3a;";
+    document.getElementById('MainTitle').innerHTML = "Using <code>eval()</code> is <em>dangerous</em>";
+    document.getElementById('SubTitle').innerHTML = "Click the \"eval()\" button to switch calc method.";
   } else {
     // It is `eval()`, or Something happened. Switch back to Shunt-Yard.
     document.getElementById('AlgoSwitchBtn').innerHTML = "Shunt-Yard";
-    document.getElementById('AlgoSwitchBtn').style = "background-color: #59c7f7;" // Switch back to default color
+    document.getElementById('AlgoSwitchBtn').style = "background-color: #59c7f7;"; // Switch back to default color
+    document.getElementById('MainTitle').innerHTML = "The <em>Real</em> Calculator";
+    document.getElementById('SubTitle').innerHTML = "Click the \"Shunt-Yard\" button to switch calc method.";
   }
 }
 
