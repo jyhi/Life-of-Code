@@ -32,15 +32,15 @@ function DisplayBackspace() {
 
 function SwitchAlgorithm() {
   var status = document.getElementById('AlgoSwitchBtn').innerHTML;
-  if (status == "Shut-Yard") {
+  if (status == "Shunt-Yard") {
     // Switch to internal `eval()`
     // NOTE: Using `eval()` is a trick, and is *dangerous*. Not recommended.
     //   Change the color to red to imply this.
     document.getElementById('AlgoSwitchBtn').innerHTML = "eval()";
     document.getElementById('AlgoSwitchBtn').style = "background-color: #ff5e3a;"
   } else {
-    // It is `eval()`, or Something happened. Switch back to Shut-Yard.
-    document.getElementById('AlgoSwitchBtn').innerHTML = "Shut-Yard";
+    // It is `eval()`, or Something happened. Switch back to Shunt-Yard.
+    document.getElementById('AlgoSwitchBtn').innerHTML = "Shunt-Yard";
     document.getElementById('AlgoSwitchBtn').style = "background-color: #59c7f7;" // Switch back to default color
   }
 }
@@ -55,8 +55,8 @@ function Evaluate() {
   var ret = 0;
   if (status == "eval()") {
     ret = EvaluateWithInnerEval(formula);
-  } else if (status == "Shut-Yard") {
-    ret = EvaluateWithShuttingYardAlgo(formula);
+  } else if (status == "Shunt-Yard") {
+    ret = EvaluateWithShuntingYardAlgo(formula);
   } else {
     // Something happened
     console.log("Internal error: We do not have a calculating method called ", status.tostring, ".");
