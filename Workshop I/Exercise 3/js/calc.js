@@ -40,7 +40,7 @@ function DisplayBackspace() {
     if (resultDisplay == "Result") {
       document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML = buf.slice(0, -1);
     } else {
-      DisplayClearAll();
+      document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML = "Formula";
       return;
     }
   }
