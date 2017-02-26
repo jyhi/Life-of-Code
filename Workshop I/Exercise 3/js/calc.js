@@ -1,5 +1,13 @@
-// TODO: FIXME: XXX: "20% Comments" as required.
+// Jesus. Christ. Finally.
 
+/**
+ * Handles ordinary key press events.
+ *
+ * Ordinary means: the key does not order the calculator to do something. Thus,
+ * this function only displays the key on the "Formula Display".
+ *
+ * @param key [in] [String] The key being pressed.
+ */
 function KeyPressed(key) {
   if (document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML != "Formula") {
     document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML += key;
@@ -8,11 +16,19 @@ function KeyPressed(key) {
   }
 }
 
+/**
+ * Clear the two displays.
+ *
+ * This function works with the "C(lear)" key.
+ */
 function DisplayClearAll() {
   document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML = "Formula";
   document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = "Result";
 }
 
+/**
+ * Do backspace on "Formula Screen".
+ */
 function DisplayBackspace() {
   var buf = document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML;
   if (buf.length == 1) {
@@ -30,6 +46,12 @@ function DisplayBackspace() {
   }
 }
 
+/**
+ * Change the calculating method of the calculator.
+ *
+ * This function works with the switch key on the upper-left corner. It changes its
+ * background color to red when "eval()" is selected.
+ */
 function SwitchAlgorithm() {
   var status = document.getElementById('AlgoSwitchBtn').innerHTML;
   if (status == "Shunt-Yard") {
@@ -45,6 +67,16 @@ function SwitchAlgorithm() {
   }
 }
 
+/**
+ * Main evaluation entry point.
+ *
+ * This function works with the "equal to" ('=') key. Note that this function also
+ * checks for the caption of the "Algorithm Switch" and determine which method to
+ * use.
+ *
+ * The function returns nothing; it displas the result directly on the "Result
+ * Display".
+ */
 function Evaluate() {
   var formula = document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML;
   if (formula == "Formula") {
@@ -67,6 +99,9 @@ function Evaluate() {
   } else {} // Something happened (already handled).
 }
 
+/**
+ * Show Reverse Polish Notation on the "Result Display".
+ */
 function DisplayShowRPN() {
   try {
     document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = Infix2RPN(document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML);
@@ -75,6 +110,14 @@ function DisplayShowRPN() {
   }
 }
 
+/**
+ * Evaluate the formula using the integrated `eval()`.
+ *
+ * NOTE: You should *never* use it since `eval()` can execute JavaScript codes.
+ * Mind exploits.
+ *
+ * @return If successed, this function returns the resulf value; otherwise it returns null.
+ */
 function EvaluateWithInnerEval(f) {
   try {
     return eval(f)
@@ -85,6 +128,27 @@ function EvaluateWithInnerEval(f) {
   return null;
 }
 
+/**
+ * Evaluate the formula using Shunting-Yard Algorithm, kindly by Edsger W. Dijkstra.
+ *
+ * @return If successed, this function returns the result value; otherwise it returns null.
+ */
+function EvaluateWithShuntingYardAlgo(f) {
+  try {
+    return RPNEval(Infix2RPN(f));
+  } catch (e) {
+    document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = e;
+  }
+
+  return null;
+}
+
+/**
+ * Convert Infix Notation to Postfix Notation (aka Reverse Polish Notation)
+ *
+ * @param  f [in] Formula in Infix Notaion
+ * @return An Array containing the RPN if successed, otherwise null.
+ */
 function Infix2RPN(f) {
   if (f == null) return null; // Be robust.
 
@@ -224,6 +288,12 @@ function Infix2RPN(f) {
   return result;
 }
 
+/**
+ * Given RPN, calculate the answer.
+ *
+ * @param  rpn [in] [Array] The RPN.
+ * @return [Int] Result.
+ */
 function RPNEval(rpn) {
   if (rpn == null) return null; // Be robust.
 
@@ -272,17 +342,6 @@ function RPNEval(rpn) {
   } else {
     // Something happened again.
     throw ("Internal error: more than one number in stack!");
-  }
-
-  return null;
-}
-
-function EvaluateWithShuntingYardAlgo(f) {
-  // document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = "Not Implemented"
-  try {
-    return RPNEval(Infix2RPN(f));
-  } catch (e) {
-    document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = e;
   }
 
   return null;
