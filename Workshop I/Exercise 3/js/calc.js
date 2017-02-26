@@ -198,6 +198,11 @@ function Infix2RPN(f) {
         //   the character in the back.
         // NOTE: XXX: `parseFloat()` can return {,-}Infinity or NaN. Use `isFinite()` to
         //   avoid processing them.
+        // BUG: 0.2.5 * 9 = 1.8
+        //   This is because:
+        //   1. `parseFloat(0.2.5)` will return 0.2;
+        //   2. So far we can do nothing with the extra decimal points.
+        //   Mark as WONTFIX.
         if (isFinite(parseFloat(result[result.length - 1])) && (!isOptJustPushedIntoStack)) {
             result[result.length - 1] += f[i];
           } else {
