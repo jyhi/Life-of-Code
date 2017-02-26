@@ -30,6 +30,21 @@ function DisplayBackspace() {
   }
 }
 
+function SwitchAlgorithm() {
+  var status = document.getElementById('AlgoSwitchBtn').innerHTML;
+  if (status == "Shut-Yard") {
+    // Switch to internal `eval()`
+    // NOTE: Using `eval()` is a trick, and is *dangerous*. Not recommended.
+    //   Change the color to red to imply this.
+    document.getElementById('AlgoSwitchBtn').innerHTML = "eval()";
+    document.getElementById('AlgoSwitchBtn').style = "background-color: #ff5e3a;"
+  } else {
+    // It is `eval()`, or Something happened. Switch back to Shut-Yard.
+    document.getElementById('AlgoSwitchBtn').innerHTML = "Shut-Yard";
+    document.getElementById('AlgoSwitchBtn').style = "background-color: #59c7f7;" // Switch back to default color
+  }
+}
+
 function Evaluate() {
   var formula = document.getElementById('FormulaDisplay').getElementsByTagName('span')[0].innerHTML;
   if (formula == "Formula") {
@@ -50,11 +65,6 @@ function Evaluate() {
   if (ret != null) {
     document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = ret;
   } else {} // Something happened (already handled).
-}
-
-function SwitchAlgorithm() {
-  var status = document.getElementById('AlgoSwitchBtn').innerHTML;
-  document.getElementById('AlgoSwitchBtn').innerHTML = (status == "eval()" ? "Shut-Yard" : "eval()");
 }
 
 function DisplayShowRPN() {
