@@ -12,13 +12,15 @@
     <body>
       <div class="container">
         <h1 style="margin-bottom: 0;">The <em>Real</em> Calculator</h1>
-        <h2 style="margin-top: 0;">Please input your formula <em>directly</em>.</h2>
+        <h2 style="margin-top: 0;">
+          Click "eval()" button to switch calc method.
+        </h2>
 
-        <div class="display-formula">
+        <div class="display-formula" id="FormulaDisplay">
           <span>Formula</span>
           <!-- Nothing here initially. -->
         </div>
-        <div class="display-result">
+        <div class="display-result" id="ResultDisplay">
           <span>Result</span>
           <!-- Nothing here initially. -->
         </div>
@@ -32,35 +34,36 @@
             -->
           <table class="keypad">
             <tr>
-              <td colspan="3"><button class="key key-set">Show RPN*</button></td>
-              <td><button class="key key-set">&#8592;</button></td>
-              <td><button class="key key-set">C</button></td>
+              <td><button class="key key-set" onclick="SwitchAlgorithm()" id="AlgoSwitchBtn">Shut-Yard</button></td> <!-- Default -->
+              <td colspan="2"><button class="key key-set" onclick="DisplayShowRPN()">Show RPN*</button></td>
+              <td><button class="key key-set" onclick="DisplayBackspace()">&#8592;</button></td>
+              <td><button class="key key-set" onclick="DisplayClearAll()">C</button></td>
             </tr>
             <tr>
-              <td><button class="key">7</button></td>
-              <td><button class="key">8</button></td>
-              <td><button class="key">9</button></td>
-              <td><button class="key">-</button></td>
-              <td><button class="key">/</button></td>
+              <td><button class="key" onclick="KeyPressed('7')">7</button></td>
+              <td><button class="key" onclick="KeyPressed('8')">8</button></td>
+              <td><button class="key" onclick="KeyPressed('9')">9</button></td>
+              <td><button class="key" onclick="KeyPressed('-')">-</button></td>
+              <td><button class="key" onclick="KeyPressed('/')">/</button></td>
             </tr>
             <tr>
-              <td><button class="key">4</button></td>
-              <td><button class="key">5</button></td>
-              <td><button class="key">6</button></td>
-              <td><button class="key">+</button></td>
-              <td><button class="key">*</button></td>
+              <td><button class="key" onclick="KeyPressed('4')">4</button></td>
+              <td><button class="key" onclick="KeyPressed('5')">5</button></td>
+              <td><button class="key" onclick="KeyPressed('6')">6</button></td>
+              <td><button class="key" onclick="KeyPressed('+')">+</button></td>
+              <td><button class="key" onclick="KeyPressed('*')">*</button></td>
             </tr>
             <tr>
-              <td><button class="key">1</button></td>
-              <td><button class="key">2</button></td>
-              <td><button class="key">3</button></td>
-              <td><button class="key">(</button></td>
-              <td><button class="key">)</button></td>
+              <td><button class="key" onclick="KeyPressed('1')">1</button></td>
+              <td><button class="key" onclick="KeyPressed('2')">2</button></td>
+              <td><button class="key" onclick="KeyPressed('3')">3</button></td>
+              <td><button class="key" onclick="KeyPressed('(')">(</button></td>
+              <td><button class="key" onclick="KeyPressed(')')">)</button></td>
             </tr>
             <tr>
-              <td colspan="2"><button class="key">0</button></td>
-              <td><button class="key">.</button></td>
-              <td colspan="2"><button class="key">=</button></td>
+              <td colspan="2"><button class="key" onclick="KeyPressed('0')">0</button></td>
+              <td><button class="key" onclick="KeyPressed('.')">.</button></td>
+              <td colspan="2"><button class="key" onclick="Evaluate()">=</button></td>
             </tr>
           </table>
         </div>

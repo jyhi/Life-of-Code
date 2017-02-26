@@ -38,6 +38,7 @@ div.keypad {
 /* table.keypad: The keypad layout. */
 table.keypad {
   width: 100%; /* Don't shrink, dude. */
+  table-layout: fixed;
 }
 
 /* button.key: Key on keypad, certainly. */
