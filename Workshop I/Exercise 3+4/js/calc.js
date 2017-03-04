@@ -361,6 +361,10 @@ function RPNEval(rpn) {
  */
 function SumForFun() {
   var sum = 0;
-  for (let i = 1; i <= 100; sum += i++) {}
+  // NOTE: Prof. Weifeng Su said not to do `i++` stuff.
+  // for (let i = 1; i <= 100; sum += i++) {}
+  for (let i = 1; i <= 100; i += 1) {
+    sum += i;
+  }
   document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = sum;
 }
