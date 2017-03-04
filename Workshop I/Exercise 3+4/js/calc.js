@@ -355,3 +355,12 @@ function RPNEval(rpn) {
 
   return null;
 }
+
+/**
+ * Sum for fun, per requirement.
+ */
+function SumForFun() {
+  var sum = 0;
+  for (let i = 1; i <= 100; sum += i++) {}
+  document.getElementById('ResultDisplay').getElementsByTagName('span')[0].innerHTML = sum;
+}
