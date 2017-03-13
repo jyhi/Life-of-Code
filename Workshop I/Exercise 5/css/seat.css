@@ -33,6 +33,11 @@ div.legend {
   width: 70%;
 }
 
+img.legend, img.cabin {
+  width: 60px;
+  height: 60px;
+}
+
 button.seats {
   margin: 0;
   border: 0;

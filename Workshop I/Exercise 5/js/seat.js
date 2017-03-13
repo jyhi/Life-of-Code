@@ -1,4 +1,5 @@
 window.onload = InitSeat(12,6);
+var selCount  = 0;
 
 function InitSeat(row, col) {
   var alphabet = [
@@ -15,7 +16,7 @@ function InitSeat(row, col) {
   }
 
   // Middle values to determine the position of Aisle and Emergency Way.
-  mRow = Math.round(row / 2);
+  mRow = Math.round(row / 2) - 1;
   mCol = Math.round(col / 2);
 
   // Aisle width.
@@ -44,17 +45,17 @@ function InitSeat(row, col) {
       if (i != mCol) {
         if (j == mRow) {
           // Emergency seats are not orderable.
-          buffer += "<td><button class=\"seats\"><img src=\"./img/occups.png\" /></button></td>";
+          buffer += "<td><img class=\"cabin\" src=\"./img/occups.svg\" /></td>";
         } else {
-          buffer += "<td><button class=\"seats\"><img src=\"./img/avails.png\" /></button></td>";
+          buffer += "<td><button class=\"seats\" id='" + i + "_" + j + "' onclick=\"SeatSelected('" + i + "_" + j + "')\"><img class=\"cabin\" src=\"./img/avails.svg\" /></button></td>";
         }
       } else {
         for (let width = 0; width < widthAisle; width++) {
           if (j == mRow) {
             // Emergency marks on Aisle
-            buffer += "<td><img src=\"./img/emerg.png\" /></td>";
+            buffer += "<td><img class=\"cabin\" src=\"./img/emerg.svg\" /></td>";
           } else {
-            buffer += "<td><img src=\"./img/aisle.png\" /></td>";
+            buffer += "<td><img class=\"cabin\" src=\"./img/aisle.svg\" /></td>";
           }
         }
       }
@@ -65,4 +66,24 @@ function InitSeat(row, col) {
   buffer += "</table>"
 
   document.getElementById('canvas').innerHTML = buffer;
+}
+
+function SeatSelected(id) {
+  var classnames = document.getElementById(id).className;
+  // XXX: Hard-coded
+  if (classnames == "seats selected") {
+    // Unselect
+    document.getElementById(id).className = "seats";
+    document.getElementById(id).innerHTML = "<img class=\"cabin\" src=\"./img/avails.svg\" />";
+    --selCount;
+  } else {
+    // Select
+    if (selCount >= 2) {
+      alert ("You can only select 2 seats at a time!");
+      return null;
+    }
+    document.getElementById(id).className = "seats selected";
+    document.getElementById(id).innerHTML = "<img class=\"cabin\" src=\"./img/sels.svg\" />";
+    ++selCount;
+  }
 }
