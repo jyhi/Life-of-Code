@@ -28,6 +28,10 @@ div.container {
   width: 60%;
 }
 
+div.btnbox {
+  margin: 30px 0 30px 0;
+}
+
 div.legend {
   margin: 0 auto;
   width: 70%;

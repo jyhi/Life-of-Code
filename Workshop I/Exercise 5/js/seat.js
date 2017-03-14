@@ -1,5 +1,6 @@
+var seatSel   = new Array();
+var seatYours = new Array();
 window.onload = InitSeat(12,6);
-var selCount  = 0;
 
 function InitSeat(row, col) {
   var alphabet = [
@@ -8,6 +9,8 @@ function InitSeat(row, col) {
     "O", "P", "Q", "R", "S", "T",
     "U", "V", "W", "X", "Y", "Z"
   ];
+
+  seatSel.length = 0;
 
   var divCanvas = document.getElementById('canvas');
   if (!divCanvas) {
@@ -36,7 +39,7 @@ function InitSeat(row, col) {
       buffer += "<td colspan=\"" + widthAisle + "\">Aisle</td>";
     }
   }
-  buffer += "</tr>"
+  buffer += "</tr>";
 
   // Seats
   for (let j = 0; j < row; j++) {
@@ -63,7 +66,7 @@ function InitSeat(row, col) {
     buffer += "</tr>";
   }
 
-  buffer += "</table>"
+  buffer += "</table>";
 
   document.getElementById('canvas').innerHTML = buffer;
 }
@@ -71,19 +74,45 @@ function InitSeat(row, col) {
 function SeatSelected(id) {
   var classnames = document.getElementById(id).className;
   // XXX: Hard-coded
+  // NOTE: Your seats are not selectable.
+  if (classnames == "seats yours") return;
   if (classnames == "seats selected") {
     // Unselect
     document.getElementById(id).className = "seats";
     document.getElementById(id).innerHTML = "<img class=\"cabin\" src=\"./img/avails.svg\" />";
-    --selCount;
+    seatSel.pop();
   } else {
     // Select
-    if (selCount >= 2) {
+    if (seatSel.length >= 2) {
       alert ("You can only select 2 seats at a time!");
       return null;
     }
     document.getElementById(id).className = "seats selected";
     document.getElementById(id).innerHTML = "<img class=\"cabin\" src=\"./img/sels.svg\" />";
-    ++selCount;
+    seatSel.push(id);
   }
+}
+
+function SubmitPressed(sel,seatYours) {
+  for (let i = 0; i < sel.length; i++) {
+    document.getElementById(sel[i]).className = "seats yours";
+    document.getElementById(sel[i]).innerHTML = "<img class=\"cabin\" src=\"./img/yours.svg\" />";
+    seatYours.push(sel[i]);
+  }
+  sel.length = 0;
+}
+
+function ResetPressed(sel,seatYours) {
+  // 1. Clear selected seats
+  for (let i = 0; i < sel.length; i++) {
+    document.getElementById(sel[i]).className = "seats";
+    document.getElementById(sel[i]).innerHTML = "<img class=\"cabin\" src=\"./img/avails.svg\" />";
+  }
+  sel.length = 0;
+  // 2. Clear your seats
+  for (let i = 0; i < seatYours.length; i++) {
+    document.getElementById(seatYours[i]).className = "seats";
+    document.getElementById(seatYours[i]).innerHTML = "<img class=\"cabin\" src=\"./img/avails.svg\" />";
+  }
+  seatYours.length = 0;
 }
