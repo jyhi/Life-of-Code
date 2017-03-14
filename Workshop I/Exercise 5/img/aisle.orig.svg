@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.0 r"
-   sodipodi:docname="occups.orig.svg">
+   sodipodi:docname="aisle.orig.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -32,7 +32,6 @@
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:pagecheckerboard="false"
      inkscape:window-width="1366"
      inkscape:window-height="713"
      inkscape:window-x="0"
@@ -46,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,18 +55,18 @@
      id="layer1"
      transform="translate(0,-270.54165)">
     <rect
-       id="rect3953"
-       width="21.166174"
-       height="21.166174"
-       x="2.6460805"
-       y="273.18762"
-       style="fill:#6d87a1;fill-opacity:1;stroke-width:0.31732649"
-       rx="0.94197202"
-       ry="0.94197202" />
-    <path
-       style="fill:#d3e9ca;fill-opacity:1;stroke-width:0.2652263"
-       d="m 3.7756889,279.56734 c -0.6258808,0 -1.1298555,0.50397 -1.1298555,1.12985 v 12.52697 c 0,0.62588 0.5039747,1.12985 1.1298555,1.12985 H 22.682646 c 0.625879,0 1.129854,-0.50397 1.129854,-1.12985 v -12.52697 c 0,-0.62588 -0.503975,-1.12985 -1.129854,-1.12985 h -1.838263 v 11.13122 c 0,0.62588 -0.503357,1.12985 -1.129236,1.12985 H 6.7431874 c -0.6258807,0 -1.129236,-0.50397 -1.129236,-1.12985 v -11.13122 z"
-       id="rect3955"
-       inkscape:connector-curvature="0" />
+       style="opacity:1;fill:#51717e;fill-opacity:1;stroke:none;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3680"
+       width="6.887094"
+       height="24.575531"
+       x="4.3354011"
+       y="271.48306" />
+    <rect
+       y="271.48306"
+       x="15.235838"
+       height="24.575531"
+       width="6.887094"
+       id="rect3682"
+       style="opacity:1;fill:#51717e;fill-opacity:1;stroke:none;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
