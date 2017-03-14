@@ -1,5 +1,14 @@
 var seatSel   = new Array(); // Array that records selected seats
 var seatYours = new Array(); // Array that records "your seats"
+
+// Alplabet is used to generate the header.
+var alphabet = [
+  "A", "B", "C", "D", "E", "F", "G",
+  "H", "I", "J", "K", "L", "M", "N",
+  "O", "P", "Q", "R", "S", "T",
+  "U", "V", "W", "X", "Y", "Z"
+];
+
 window.onload = InitSeat(12,6); // Initialize canvas on page load
 
 /**
@@ -12,14 +21,6 @@ window.onload = InitSeat(12,6); // Initialize canvas on page load
  * @param col {Numbers} Number of columns.
  */
 function InitSeat(row, col) {
-  // Alplabet is used to generate the header.
-  var alphabet = [
-    "A", "B", "C", "D", "E", "F", "G",
-    "H", "I", "J", "K", "L", "M", "N",
-    "O", "P", "Q", "R", "S", "T",
-    "U", "V", "W", "X", "Y", "Z"
-  ];
-
   // Reset. XXX: This is quite tricky.
   seatSel.length = 0;
   seatYours.length = 0;
@@ -62,7 +63,7 @@ function InitSeat(row, col) {
           // Emergency seats are not orderable.
           buffer += "<td><img class=\"cabin\" src=\"./img/occups.svg\" /></td>";
         } else {
-          buffer += "<td><button class=\"seats\" id='" + i + "_" + j + "' onclick=\"SeatSelected('" + i + "_" + j + "')\"><img class=\"cabin\" src=\"./img/avails.svg\" /></button></td>";
+          buffer += "<td><button class=\"seats\" id='" + j + "_" + i + "' onclick=\"SeatSelected('" + j + "_" + i + "')\"><img class=\"cabin\" src=\"./img/avails.svg\" /></button></td>";
         }
       } else {
         for (let width = 0; width < widthAisle; width++) {
@@ -133,12 +134,19 @@ function SeatSelected(id) {
  * @see ResetPressed
  */
 function SubmitPressed(sel,seatYours) {
+  var msg = "You are goint to select:\n";
   for (let i = 0; i < sel.length; i++) {
-    document.getElementById(sel[i]).className = "seats yours";
-    document.getElementById(sel[i]).innerHTML = "<img class=\"cabin\" src=\"./img/yours.svg\" />";
-    seatYours.push(sel[i]);
+    let bound = sel[i].indexOf("_");
+    msg += "- Seat " + (parseInt(sel[i].substr(0,bound)) + 1) + alphabet[parseInt(bound+1)] + "\n";
   }
-  sel.length = 0;
+  if (window.confirm(msg)) {
+    for (let i = 0; i < sel.length; i++) {
+      document.getElementById(sel[i]).className = "seats yours";
+      document.getElementById(sel[i]).innerHTML = "<img class=\"cabin\" src=\"./img/yours.svg\" />";
+      seatYours.push(sel[i]);
+    }
+    sel.length = 0;
+  } else {}
 }
 
 
