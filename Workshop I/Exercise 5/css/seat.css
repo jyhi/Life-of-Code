@@ -1,3 +1,4 @@
+/* Reset. */
 body, td, tr {
   padding: 0;
   border:  0;
@@ -5,16 +6,21 @@ body, td, tr {
   text-align: center;
 }
 
+/* Tables should be:
+   1. in full width;
+   2. with fixed layout for each cells. */
 table {
   width: 100%;
   table-layout: fixed;
 }
 
+/* Division in which titles are shown. */
 div.title {
   margin: 0 auto;
   width: 100%;
 }
 
+/* A better look when h1 and h2 are put together. */
 h1.title {
   margin-bottom: 0;
 }
@@ -23,25 +29,30 @@ h2.title {
   margin-top: 0;
 }
 
+/* Actually the "canvas". */
 div.container {
   margin: 0 auto;
   width: 60%;
 }
 
+/* Division where buttons are shown. */
 div.btnbox {
   margin: 30px 0 30px 0;
 }
 
+/* Division where legends are shown. */
 div.legend {
   margin: 0 auto;
   width: 70%;
 }
 
+/* Images in fixed size. */
 img.legend, img.cabin {
   width: 60px;
   height: 60px;
 }
 
+/* Attributes for buttons on the seat. */
 button.seats {
   margin: 0;
   border: 0;
