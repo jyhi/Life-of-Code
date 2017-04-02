@@ -45,6 +45,7 @@ function initFace() {
 
 function drawSmileyFace() {
    drawFace();
+   drawHairs('down');
    drawLeftEye();
    drawRightEye();
    drawNose();
@@ -64,6 +65,32 @@ function drawFace() {
    context.fill();
    context.stroke();
 }
+
+function drawHairs(direction) {
+  function drawHair(sx,sy,ex,ey) {
+    context.beginPath();
+    context.moveTo(sx, sy);
+    context.lineTo(ex, ey);
+    context.stroke();
+    context.closePath();
+  }
+  context.strokeStyle = 'black';
+  context.fillStyle = 'black';
+  let hairpos = [
+    [160, 160, 120, 120, 200, 200],
+    [300, 100, 300, 43, 300, 156],
+    [440, 160, 480, 120, 400, 200]
+  ];
+
+  for (let i = 0; i < hairpos.length; i++) {
+    if (direction == 'up') {
+      drawHair(hairpos[i][0], hairpos[i][1], hairpos[i][2], hairpos[i][3]);
+    } else {
+      drawHair(hairpos[i][0], hairpos[i][1], hairpos[i][4], hairpos[i][5]);
+    }
+  }
+}
+
 function drawLeftEye(dx, dy) {
    x = 200;
    y = 250;
@@ -191,6 +218,7 @@ canvas.addEventListener('mousemove', function(evt) {
    }
 
    drawFace();
+   drawHairs('down');
    drawLeftEye(ldx, ldy);
    drawRightEye(rdx, ldy);
    drawNose();
@@ -201,13 +229,14 @@ canvas.addEventListener('mousemove', function(evt) {
 canvas.addEventListener('mousedown', function(evt){
    context.clearRect(0, 0, canvas.width, canvas.height);
    drawFace();
+   drawHairs('up');
    drawLeftEye();
    drawRightEye();
    drawNose();
    context.strokeStyle = 'red';
    context.fillStyle = "red";
    context.beginPath();
-   context.arc(300, 350, 75, degreesToRadians(0), degreesToRadians(180), false);
+   context.arc(300, 350, 75, degreesToRadians(0), degreesToRadians(90), false);
    context.stroke();
 }, false);
 
