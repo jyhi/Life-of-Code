@@ -1,0 +1,124 @@
+/* Yes, yes, 20% comments. */
+
+/***** Tags *****/
+
+/**
+ * Reset margin, border, and padding.
+ */
+body {
+  margin:  0;
+  border:  0;
+  padding: 0;
+}
+
+/**
+ * Define header style, which is a 'jumbotron'.
+ */
+header {
+  background-color: #b0bec5;
+  color: white;
+  padding: 100px 150px 100px 150px;
+}
+
+/**
+ * Define footer style, which is similar to the header, but with extra styles to distinguish from the header.
+ */
+footer {
+  background-color: #b0bec5;
+  color: white;
+  padding: 100px 150px 100px 150px;
+  clear: both;
+}
+
+/**
+ * Define image styles. All images should have a 10px margin.
+ */
+img {
+  width: 90%;
+  margin: 10px;
+}
+
+/***** Classes *****/
+
+/**
+ * Define the style of the floating "cart" on the left of page.
+ */
+div.cart {
+  position: fixed;
+  padding: 10px;
+  top: 50%;
+  box-shadow: 3px 3px 5px 3px grey;
+  background-color: #455a64;
+  color: white;
+}
+
+/**
+ * Define the style of main container. Only margin-left and margin-right need to be set.
+ */
+div.container {
+  margin: 0 150px 0 150px;
+}
+
+/**
+ * Define the style of div `book-items`.
+ */
+div.book-items {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+/**
+ * Define the style of img `book-items`. Restrict heights.
+ *
+ * FIXME: This will squash the image.
+ */
+img.book-items {
+  height: 300px;
+}
+
+/**
+ * Define the style of div `checkout` (which is the checkout, literally).
+ */
+div.checkout {
+  clear: both;
+}
+
+/**
+ * Define the style of the cards (those under the book images).
+ */
+div.card {
+  background-color: #607d8b;
+  color: white;
+  margin: 0.5em;
+  box-shadow: 3px 3px 5px 3px grey;
+}
+
+/**
+ * Define a bigger h1 for header text use, without margin.
+ */
+h1.big {
+  font-size: 64px;
+  margin: 0;
+}
+
+/**
+ * Define a bigger h2 for header text use, without margin.
+ */
+h2.big {
+  font-size: 24px;
+  margin: 0;
+}
+
+/***** IDs *****/
+
+/**
+ * Money money money,
+ *   always sunny,
+ *     in the rich man's world.
+ *
+ * -- ABBA, "Money, money, money"
+ */
+#money-display {
+  font-size: 48px;
+}

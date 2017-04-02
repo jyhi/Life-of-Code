@@ -1,0 +1,89 @@
+<!-- Finally HTML5. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 Exercise 1</title>
+    <link rel="stylesheet" href="./css/cart.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="big">New World.</h1>
+      <h2 class="big">Drop your favourite ones to the cart on the left!</h2>
+    </header>
+    <div class="container"> <!-- A container, literally. -->
+      <div class="books">
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book1.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>The Man Who Changed China</i></p>
+            <p style="margin: 0;">$<b>16</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book2.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>The Three-Body Problem</i></p>
+            <p style="margin: 0;">$<b>10</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book3.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>The Mythical Man-Month</i></p>
+            <p style="margin: 0;">$<b>25</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book4.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>The Cathedral and The Bazaar</i></p>
+            <p style="margin: 0;">$<b>13</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book5.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>Modern Operating Systems</i></p>
+            <p style="margin: 0;">$<b>100</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book6.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>Code: The Hidden Language of Computer Hardware and Software</i></p>
+            <p style="margin: 0;">$<b>22</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book7.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>Just for Fun: The Story of an Accidental Revolutionary</i></p>
+            <p style="margin: 0;">$<b>10</b></p>
+          </div>
+        </div>
+        <div class="book-items">
+          <div class="card">
+            <img class="book-items" src="./img/book8.jpg" ondragstart="ImgDragStart(event)" />
+            <p style="margin: 0;"><i>Pointers on C</i></p>
+            <p style="margin: 0;">$<b>120</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="checkout">
+        <h2>Total value: $<b id="money-display">0</b></h2>
+      </div>
+    </div>
+
+    <!-- This guy is fixed on the left of page. -->
+    <div class="cart" ondrop="CartDropped(event)">
+      <!-- NOTE: Overriding the margin-left to fix visual asymmetry. -->
+      <img src="./img/cart.svg" alt="Cart" id="cart-logo" draggable="false" style="width: 50px; margin-left: 5px;" />
+    </div>
+
+    <!-- +1s -->
+    <footer><p>Copyleft 2017 Hong Kong Journalists.</p></footer>
+  </body>
+
+  <script src="./js/cart.js" charset="utf-8"></script>
+</html>
