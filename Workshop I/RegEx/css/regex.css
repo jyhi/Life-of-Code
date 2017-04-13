@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+div.container {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+div.buttonbox {
+    margin-top: 25px;
+}
+
+td.label {
+    padding-right: 1em;
+    text-align: right;
+}
+
+td.input {
+    padding-left: 1em;
+    text-align: left;
+}
