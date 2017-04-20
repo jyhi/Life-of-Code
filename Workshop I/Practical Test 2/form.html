@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practical Test 2</title>
+    <link rel="stylesheet" href="./css/form.css" />
+  </head>
+  <body>
+    <div id="container" class="container">
+      <table>
+        <tr>
+          <td class="label-left">ID:</td>
+          <td><input type="text" id="input-id" /></td>
+        </tr>
+        <tr>
+          <td class="label-left">Name:</td>
+          <td><input type="text" id="input-name" /></td>
+        </tr>
+        <tr>
+          <td class="label-left">Password:</td>
+          <td><input type="password" id="input-pwd" /></td> <!-- Remains type="text" in submission. -->
+        </tr>
+        <tr>
+          <td class="label-left">Confirm Pwd:</td>
+          <td><input type="password" id="input-cpwd" /></td> <!-- Remains type="text" in submission. -->
+        </tr>
+        <tr>
+          <td class="label-left">Address:</td>
+          <td><input type="text" id="input-addr" /></td>
+        </tr>
+        <tr>
+          <td class="label-left">Cell Phone:</td>
+          <td><input type="text" id="input-phone" /></td>
+        </tr>
+        <tr>
+          <td class="label-left">Adults in family:</td>
+          <td>
+            <button id="button-nadult-1" style="padding: 0;">-</button>
+            <input type="text" value="1" style="width: 20px;" id="input-nadult" />
+            <button id="button-nadult+1" style="padding: 0;">+</button>
+            <button id="button-children-entry-expander" style="padding: 0;">Children</button>
+          </td>
+        </tr>
+        <tr id="entry-nchild" style="visibility: collapse">
+          <td class="label-left">No. of Children:</td>
+          <td>
+            <select id="select-nchild" name="nchild" style="width: 100%;">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <fieldset id="fieldset-hobbies">
+              <legend>Hobbies</legend>
+              <table>
+                <tr>
+                  <td>
+                    <input type="checkbox" name="hobbies" value="Singing" />
+                    <span>Singing</span>
+                  </td>
+                  <td>
+                    <input type="checkbox" name="hobbies" value="Dancing" />
+                    <span>Dancing</span>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="button-box">
+              <button id="button-submit">Submit</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- XXX: FIXME: VERY TRICKY... -->
+    <div id="errdisp" class="errdisp">
+      <div class="errdisp-item" id="errdisp-id" style="visibility: hidden;">
+        ID can only be numbers.
+      </div>
+      <div class="errdisp-item" id="errdisp-name" style="visibility: hidden;">
+        Alphabetic &amp; spaces only.
+      </div>
+      <div class="errdisp-item" id="errdisp-pwd" style="visibility: hidden;">
+        6-8 Alphabetic &amp; Numbers only.
+      </div>
+      <div class="errdisp-item" id="errdisp-cpwd" style="visibility: hidden;">
+        Password incorrect.
+      </div>
+      <div class="errdisp-item" id="errdisp-addr" style="visibility: hidden;">
+        Alphabetic, numbers &amp; spaces only.
+      </div>
+      <div class="errdisp-item" id="errdisp-phone" style="visibility: hidden;">
+        11 Digits of number only.
+      </div>
+      <div class="errdisp-item" id="errdisp-nadult" style="visibility: hidden;">
+        Can only be between 1 and 20.
+      </div>
+    </div>
+  </body>
+  <script src="./js/form.js" charset="utf-8"></script>
+</html>
