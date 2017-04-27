@@ -11,6 +11,11 @@ document.getElementById('button-nadult-1').addEventListener("click", on_nadult_b
 document.getElementById('button-children-entry-expander').addEventListener("click", on_child_entry_expand);
 document.getElementById('button-submit').addEventListener("click", on_submit);
 
+/**
+ * Validate ID input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_id() {
   if (document.getElementById('input-id').value.match(/^\d+$/)) {
     err("id", "hidden");
@@ -21,6 +26,11 @@ function validate_input_id() {
   return false;
 }
 
+/**
+ * Validate name input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_name() {
   if (document.getElementById('input-name').value.match(/^[a-zA-Z\ ]+$/)) {
     err("name", "hidden");
@@ -31,6 +41,11 @@ function validate_input_name() {
   return false;
 }
 
+/**
+ * Validate password input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_pwd() {
   if (document.getElementById('input-pwd').value.match(/^[a-zA-Z0-9]{6,8}$/)) {
     err("pwd", "hidden");
@@ -41,6 +56,13 @@ function validate_input_pwd() {
   return false;
 }
 
+/**
+ * Validate confirmed password input with RegEx.
+ *
+ * Should be identical with `input-pwd`.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_cpwd() {
   if (document.getElementById('input-cpwd').value == document.getElementById('input-pwd').value) {
     err("cpwd", "hidden");
@@ -51,6 +73,11 @@ function validate_input_cpwd() {
   return false;
 }
 
+/**
+ * Validate address input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_addr() {
   if (document.getElementById('input-addr').value.match(/^[a-zA-Z0-9\ ]+$/)) {
     err("addr", "hidden");
@@ -61,6 +88,11 @@ function validate_input_addr() {
   return false;
 }
 
+/**
+ * Validate telephone input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_phone() {
   if (document.getElementById('input-phone').value.match(/^\d{11}$/)) {
     err("phone", "hidden");
@@ -71,6 +103,11 @@ function validate_input_phone() {
   return false;
 }
 
+/**
+ * Validate number of adult input with RegEx.
+ *
+ * @return `true` if success, otherwise `false`.
+ */
 function validate_input_nadult() {
   let nadult = parseInt(document.getElementById('input-nadult').value);
   if ((nadult < 1) || (nadult > 20)) {
@@ -82,10 +119,19 @@ function validate_input_nadult() {
   return false;
 }
 
+/**
+ * Show corresponding error message.
+ *
+ * @param {String} id     [in] ID of input, beside which the error message will display.
+ * @param {String} status [in] Status of the error message. This is the value of "visibility" attribute in CSS.
+ */
 function err(id, status) {
   document.getElementById("errdisp-" + id).style = "visibility: " + status;
 }
 
+/**
+ * nadult++ when pressing +adult button.
+ */
 function on_nadult_btn_plus1() {
   document.getElementById('input-nadult').value = parseInt(document.getElementById('input-nadult').value) + 1;
 
@@ -97,6 +143,9 @@ function on_nadult_btn_plus1() {
   }
 }
 
+/**
+ * nadult-- when pressing -adult button.
+ */
 function on_nadult_btn_minus1() {
   document.getElementById('input-nadult').value = parseInt(document.getElementById('input-nadult').value) - 1;
 
@@ -108,6 +157,9 @@ function on_nadult_btn_minus1() {
   }
 }
 
+/**
+ * Expand or collapse the "number of child" field when pressing the "Children" button.
+ */
 function on_child_entry_expand() {
   if (document.getElementById('entry-nchild').style.visibility == "collapse") {
     document.getElementById('entry-nchild').style.visibility = "visible";
@@ -116,6 +168,11 @@ function on_child_entry_expand() {
   }
 }
 
+/**
+ * Do verification and popup an alert message box when clicking the submit button.
+ *
+ * @return `false` if verification fails.
+ */
 function on_submit() {
   // Prevent submission when errors remain or input areas are blank.
   let inputs = document.getElementById('container').getElementsByTagName('input');
