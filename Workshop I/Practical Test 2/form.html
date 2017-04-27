@@ -7,83 +7,86 @@
   </head>
   <body>
     <div id="container" class="container">
-      <table>
-        <tr>
-          <td class="label-left">ID:</td>
-          <td><input type="text" id="input-id" /></td>
-        </tr>
-        <tr>
-          <td class="label-left">Name:</td>
-          <td><input type="text" id="input-name" /></td>
-        </tr>
-        <tr>
-          <td class="label-left">Password:</td>
-          <td><input type="password" id="input-pwd" /></td> <!-- Remains type="text" in submission. -->
-        </tr>
-        <tr>
-          <td class="label-left">Confirm Pwd:</td>
-          <td><input type="password" id="input-cpwd" /></td> <!-- Remains type="text" in submission. -->
-        </tr>
-        <tr>
-          <td class="label-left">Address:</td>
-          <td><input type="text" id="input-addr" /></td>
-        </tr>
-        <tr>
-          <td class="label-left">Cell Phone:</td>
-          <td><input type="text" id="input-phone" /></td>
-        </tr>
-        <tr>
-          <td class="label-left">Adults in family:</td>
-          <td>
-            <button id="button-nadult-1" style="padding: 0;">-</button>
-            <input type="text" value="1" style="width: 20px;" id="input-nadult" />
-            <button id="button-nadult+1" style="padding: 0;">+</button>
-            <button id="button-children-entry-expander" style="padding: 0;">Children</button>
-          </td>
-        </tr>
-        <tr id="entry-nchild" style="visibility: collapse">
-          <td class="label-left">No. of Children:</td>
-          <td>
-            <select id="select-nchild" name="nchild" style="width: 100%;">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <fieldset id="fieldset-hobbies">
-              <legend>Hobbies</legend>
-              <table>
-                <tr>
-                  <td>
-                    <input type="checkbox" name="hobbies" value="Singing" />
-                    <span>Singing</span>
-                  </td>
-                  <td>
-                    <input type="checkbox" name="hobbies" value="Dancing" />
-                    <span>Dancing</span>
-                  </td>
-                </tr>
-              </table>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <div class="button-box">
-              <button id="button-submit">Submit</button>
-            </div>
-          </td>
-        </tr>
-      </table>
+      <form action="./form.php" method="post">
+        <table>
+          <tr>
+            <td class="label-left">ID:</td>
+            <td><input type="text" name="id" id="input-id" /></td>
+          </tr>
+          <tr>
+            <td class="label-left">Name:</td>
+            <td><input type="text" name="name" id="input-name" /></td>
+          </tr>
+          <tr>
+            <td class="label-left">Password:</td>
+            <td><input type="password" name="pwd" id="input-pwd" /></td> <!-- Remains type="text" in submission. -->
+          </tr>
+          <tr>
+            <td class="label-left">Confirm Pwd:</td>
+            <td><input type="password" name="cpwd" id="input-cpwd" /></td> <!-- Remains type="text" in submission. -->
+          </tr>
+          <tr>
+            <td class="label-left">Address:</td>
+            <td><input type="text" name="addr" id="input-addr" /></td>
+          </tr>
+          <tr>
+            <td class="label-left">Cell Phone:</td>
+            <td><input type="text" name="phone" id="input-phone" /></td>
+          </tr>
+          <tr>
+            <td class="label-left">Adults in family:</td>
+            <td>
+              <button type="button" id="button-nadult-1" style="padding: 0;">-</button>
+              <input type="text" value="1" style="width: 20px;" name="nadult" id="input-nadult" />
+              <button type="button" id="button-nadult+1" style="padding: 0;">+</button>
+              <button type="button" id="button-children-entry-expander" style="padding: 0;">Children</button>
+            </td>
+          </tr>
+          <tr id="entry-nchild" style="visibility: collapse">
+            <td class="label-left">No. of Children:</td>
+            <td>
+              <select id="select-nchild" name="nchild" style="width: 100%;">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <fieldset id="fieldset-hobbies">
+                <legend>Hobbies</legend>
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="hobbies-singing" value="Singing" />
+                      <span>Singing</span>
+                    </td>
+                    <td>
+                      <input type="checkbox" name="hobbies-dancing" value="Dancing" />
+                      <span>Dancing</span>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="button-box">
+                <!-- <button type="button" id="button-submit">Submit</button> -->
+                <input type="submit" id="button-submit" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </form>
     </div>
 
     <!-- XXX: FIXME: VERY TRICKY... -->
